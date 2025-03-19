@@ -1,0 +1,31 @@
+.App-Products-Row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.App-Products-Box {
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    background: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+.App-Products-Box:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+.Add-To-Cart {
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.Add-To-Cart:hover {
+    background: #0056b3;
+}

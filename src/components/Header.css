@@ -1,0 +1,21 @@
+.App-Header-Row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00ff08;
+    padding: 10px 20px;
+    color: white;
+}
+.Nav-Menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.Nav-Menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.Nav-Menu li a:hover {
+    text-decoration: underline;
+}

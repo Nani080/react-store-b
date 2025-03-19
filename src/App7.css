@@ -1,0 +1,461 @@
+/* Updated App7.css */
+.header {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Base message styling with smooth fade-in and fade-out animation */
+.msg {
+    display: none; /* Initially hidden */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    width: 60%;
+    margin: 15px auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Error message styling */
+.msg.error {
+    color: #dc3545;
+    background: #f8d7da;
+    border: 2px solid #dc3545;
+}
+
+/* Success message styling */
+.msg.success {
+    color: #155724;
+    background: #d4edda;
+    border: 2px solid #155724;
+}
+
+/* Show message only when it has text with animation */
+.msg:not(:empty) {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide message smoothly when it disappears */
+.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Layout Fix */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+}
+
+/* Input Section */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.input-container label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.input-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px;
+    margin: 10px 0;
+}
+
+.input-container #add,
+.input-container #clear,
+.input-container #checkout {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+    margin: 10px 0;
+    width: 250px;
+}
+
+.input-container #add {
+    background: #28a745;
+}
+.input-container #add:hover {
+    background: #218838;
+}
+
+.input-container #clear {
+    background: #dc3545;
+}
+.input-container #clear:hover {
+    background: #c82333;
+}
+
+/* Checkout button styling */
+#checkout {
+    background: #007bff;
+}
+#checkout:hover {
+    background: #0056b3;
+}
+
+/* Improved Separator */
+.separator {
+    width: 4px;
+    background-color: #333;
+    height: 100%;
+    margin: 0 20px;
+    border-radius: 3px;
+    opacity: 1;
+    min-height: 100%;
+    align-self: stretch;
+}
+
+/* Table Section */
+.table-container {
+    width: 55%;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.table-container td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.table-container tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.table-container tr:nth-child(odd) {
+    background: #e9ecef;
+}
+
+/* Checkout Section */
+.checkout-section {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #ccc;
+}
+
+.checkout-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.checkout-section table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.checkout-section th, .checkout-section td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.checkout-section tfoot {
+    font-weight: bold;
+    background: #f8f9fa;
+}
+
+/* Style for "Print Bill" button */
+#print-bill {
+    background: #28a745;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+#print-bill:hover {
+    background: #218838;
+}
+
+
+/* Style for "Clear Table" button */
+#clear-table {
+    background: #dc3545;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+#clear-table:hover {
+    background: #c82333;
+}
+
+/* Style for "Remove Item" button (X) */
+.remove-item {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.remove-item:hover {
+    background: #cc0000;
+}
+
+/* Align "Clear Table" and "Checkout" buttons */
+.table-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#checkout {
+    background: #007bff;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#checkout:hover {
+    background: #0056b3;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #bill-section, #bill-section * {
+        visibility: visible;
+    }
+    #bill-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    #print-bill {
+        display: none; /* Hide the "Print Bill" button */
+    }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* .dark-mode .header {
+    background: #1f1f1f;
+} */
+
+.dark-mode .input-container input,
+.dark-mode .table-container table,
+.dark-mode .checkout-section table {
+    background: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+}
+
+.dark-mode .separator {
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+.dark-mode .table-container th {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .table-container tr:nth-child(even) {
+    background: #252525;
+}
+
+.dark-mode .table-container tr:nth-child(odd) {
+    background: #1e1e1e;
+}
+
+.dark-mode .checkout-section {
+    background: #1f1f1f;
+    color: white;
+    border-top: 2px solid #444;
+}
+
+.dark-mode .remove-item {
+    background: #ff4d4d;
+    color: white;
+}
+
+.dark-mode .remove-item:hover {
+    background: #cc0000;
+}
+
+.dark-mode-toggle {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.dark-mode-toggle:hover {
+    background: #e68900;
+}
+
+/* Ensure Grand Total row adapts to Dark Mode */
+.dark-mode .table-container tfoot {
+    background: #222; /* Dark background */
+    color: white;
+}
+
+.dark-mode .table-container tfoot th {
+    border-top: 2px solid #555;
+    color: white; /* Ensure text is white */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+/* Dark mode button */
+.dark-mode-toggle {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: #e68900;
+}
+
+/* Button animations */
+button {
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Slide-in animation for checkout section */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.checkout-section {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.discount-input {
+    width: 120px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.discount-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Dark Mode for Discount Input */
+.dark-mode .discount-input {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
