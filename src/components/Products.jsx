@@ -1,4 +1,5 @@
 import "./Products.css";
+
 export default function Products() {
   const products = [
     { id: 1, name: "Product 1", price: 30 },
@@ -8,13 +9,20 @@ export default function Products() {
     { id: 5, name: "Product 5", price: 70 },
     { id: 6, name: "Product 6", price: 25 },
   ];
+
+  const handleAddToCart = (productName) => {
+    console.log(`${productName} added to cart!`);
+  };
+
   return (
     <div className="App-Products-Row">
       {products.map((product) => (
         <div className="App-Products-Box" key={product.id}>
           <h3>{product.name}</h3>
           <h4>${product.price.toFixed(2)}</h4>
-          <button className="Add-To-Cart">Add to Cart</button>
+          <button className="Add-To-Cart" onClick={() => handleAddToCart(product.name)}>
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>

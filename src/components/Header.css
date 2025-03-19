@@ -3,19 +3,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: #00a6ff;
-    padding: 10px 20px;
+    padding: 15px 20px;
     color: white;
-}
-.Nav-Menu {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-.Nav-Menu li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-.Nav-Menu li a:hover {
-    text-decoration: underline;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
