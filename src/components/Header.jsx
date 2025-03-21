@@ -7,8 +7,8 @@ export default function Header() {
         <h2>My React Store</h2>
       </div>
       <div>
-        <Link to="/home">Home</Link>
-        <Link to="/login">Login</Link>
+        <Link to="/home">Home|</Link>
+        <Link to="/login">Login|</Link>
         <Link to="/cart">Cart</Link>
       </div>
       {/* <nav>
