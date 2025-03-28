@@ -76,6 +76,7 @@ export default function Products() {
     { id: 4, name: "Product 4", price: 95 },
     { id: 5, name: "Product 5", price: 70 },
     { id: 6, name: "Product 6", price: 25 },
+    { id: 7, name: "Product 7", price: 35 },
   ];
 
   return (
