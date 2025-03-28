@@ -24,7 +24,7 @@
 // }
 
 // src/components/Login.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 
