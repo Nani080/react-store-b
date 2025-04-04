@@ -66,7 +66,7 @@ import "./Products.css";
 import { useCart } from "../context/CartContext";
 
 export default function Products() {
-  const { addToCart } = useCart();
+  const { addToCart, notification, incrementQty, decrementQty, cartItems } = useCart(); // ✅ include notification
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
   const products = [
@@ -83,31 +83,75 @@ export default function Products() {
     <div>
       {/* Welcome Banner */}
       {loggedInUser && (
-        <div style={{
-          textAlign: "center",
-          background: "#d4edda",
-          color: "#155724",
-          padding: "10px",
-          marginBottom: "20px",
-          border: "1px solid #c3e6cb",
-          borderRadius: "8px",
-        }}>
+        <div
+          style={{
+            textAlign: "center",
+            background: "#d4edda",
+            color: "#155724",
+            padding: "10px",
+            marginBottom: "10px",
+            border: "1px solid #c3e6cb",
+            borderRadius: "8px",
+          }}
+        >
           Welcome, {loggedInUser.username}!
+        </div>
+      )}
+
+      {/* Notification */}
+      {notification && (
+        <div
+          style={{
+            textAlign: "center",
+            background: "#cce5ff",
+            color: "#004085",
+            padding: "8px",
+            marginBottom: "20px",
+            border: "1px solid #b8daff",
+            borderRadius: "8px",
+          }}
+        >
+          {notification}
         </div>
       )}
 
       {/* Products */}
       <div className="App-Products-Row">
-        {products.map((product) => (
+        {/* {products.map((product) => (
           <div className="App-Products-Box" key={product.id}>
             <h3>{product.name}</h3>
             <h4>${product.price.toFixed(2)}</h4>
+            <span>
+              <button></button>
+            </span>
             <button className="Add-To-Cart" onClick={() => addToCart(product)}>
               Add to Cart
             </button>
           </div>
-        ))}
+        ))} */}
+        {products.map((product) => {
+          const cartItem = cartItems.find((item) => item.id === product.id);
+
+          return (
+            <div className="App-Products-Box" key={product.id}>
+              <h3>{product.name}</h3>
+              <h4>${product.price.toFixed(2)}</h4>
+              {cartItem ? (
+                <div>
+                  <button onClick={() => decrementQty(product.id)}>-</button>
+                  <span style={{ margin: "0 10px" }}>{cartItem.quantity}</span>
+                  <button onClick={() => incrementQty(product.id)}>+</button>
+                </div>
+              ) : (
+                <button className="Add-To-Cart" onClick={() => addToCart(product)}>
+                  Add to Cart
+                </button>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
+

@@ -88,7 +88,7 @@ export default function Header() {
           <>
             <Link to="/home">Home</Link> |
             <Link to="/cart">Cart</Link> |
-            <button onClick={handleLogout} style={{ background: "transparent", border: "none", color: "white", cursor: "pointer" }}>
+            <button onClick={handleLogout} style={{ background: "transparent", border: "none", color: "red", cursor: "pointer" }}>
               Logout
             </button>
             <button onClick={handleClearData} style={{ background: "transparent", border: "none", color: "red", cursor: "pointer" }}>
